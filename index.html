@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amorn Capital Holdings | Private Family Investment Office</title>
+    <meta name="description" content="Amorn Capital Holdings is a private single-family investment office based in Florida, managing proprietary capital through fundamental value investing, systematic options cash-flow generation, and quantitative risk management.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cinzel (Classic Institutional Serif), Playfair Display, Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#040B14',
+                            900: '#06101E',
+                            800: '#0B192C',
+                            700: '#112540',
+                            600: '#1B365D'
+                        },
+                        gold: {
+                            200: '#F5E6B3',
+                            300: '#E5C158',
+                            400: '#D4AF37',
+                            500: '#C59B27',
+                            600: '#9E7B1C'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Cinzel', 'serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Institutional Metallic Gold & Navy Styles */
+        body {
+            background-color: #06101E;
+            color: #F8FAFC;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F5E6B3 0%, #D4AF37 45%, #AA8222 75%, #E5C158 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-border-glow {
+            border-color: rgba(212, 175, 55, 0.28);
+            box-shadow: 0 10px 35px -10px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(212, 175, 55, 0.08);
+        }
+
+        .gold-border-glow:hover {
+            border-color: rgba(212, 175, 55, 0.55);
+            box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.85), 0 0 30px -5px rgba(212, 175, 55, 0.16);
+        }
+
+        .hero-radial-bg {
+            background: 
+                radial-gradient(circle at 50% 22%, rgba(27, 54, 93, 0.55) 0%, rgba(11, 25, 44, 0.85) 48%, #06101E 100%);
+        }
+
+        .subtle-grid {
+            background-size: 48px 48px;
+            background-image: 
+                linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+        }
+
+        .gold-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.5) 50%, transparent 100%);
+        }
+
+        /* Smooth Donut Chart Segment Transitions */
+        .donut-segment {
+            transition: stroke-dasharray 0.6s cubic-bezier(0.4, 0, 0.2, 1), stroke-width 0.25s ease, opacity 0.25s ease;
+            cursor: pointer;
+        }
+        .donut-segment:hover {
+            stroke-width: 9;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-400 selection:text-navy-950">
+
+    <!-- Shared SVG Definitions for Metallic Gold Gradients -->
+    <svg width="0" height="0" class="hidden" aria-hidden="true">
+        <defs>
+            <linearGradient id="goldMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F7E9B7" />
+                <stop offset="30%" stop-color="#DFB846" />
+                <stop offset="55%" stop-color="#B68B23" />
+                <stop offset="80%" stop-color="#E5C158" />
+                <stop offset="100%" stop-color="#9A7215" />
+            </linearGradient>
+            <linearGradient id="goldHighlight" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#9E7B1C" />
+                <stop offset="50%" stop-color="#E5C158" />
+                <stop offset="100%" stop-color="#FFF2C2" />
+            </linearGradient>
+            <filter id="emblemShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.65"/>
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Top Sticky Institutional Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-navy-950/90 backdrop-blur-md border-b border-gold-400/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Emblem + Name -->
+            <a href="#" class="flex items-center gap-3.5 group focus:outline-none">
+                <div class="w-11 h-11 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+                    <!-- Mini Custom SVG Logo matching the Amorn Enso Crest -->
+                    <svg viewBox="0 0 200 200" class="w-full h-full">
+                        <!-- Outer Enso Swirl Arcs -->
+                        <path d="M100,14 C148,14 186,52 186,100 C186,138 161,170 126,181 C154,166 172,136 172,102 C172,58 137,24 94,24 C63,24 36,42 23,69 C32,37 63,14 100,14 Z" fill="url(#goldMetallic)"/>
+                        <path d="M100,186 C52,186 14,148 14,100 C14,62 39,30 74,19 C46,34 28,64 28,98 C28,142 63,176 106,176 C137,176 164,158 177,131 C168,163 137,186 100,186 Z" fill="url(#goldHighlight)"/>
+                        <circle cx="100" cy="100" r="68" fill="none" stroke="url(#goldMetallic)" stroke-width="3.5" stroke-dasharray="320 60" transform="rotate(-35 100 100)"/>
+                        <!-- Sculpted Serif Letter A -->
+                        <path d="M100,40 L142,146 L152,146 L152,154 L116,154 L116,146 L125,146 L115,120 L82,120 L72,146 L82,146 L82,154 L48,154 L48,146 L57,146 L96,40 Z M98.5,67 L86,108 L111,108 Z" fill="url(#goldMetallic)"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display text-lg sm:text-xl font-bold tracking-[0.18em] gold-gradient-text leading-none">AMORN</span>
+                    <span class="font-display text-[9.5px] sm:text-[10.5px] tracking-[0.28em] text-gold-300/90 mt-1">CAPITAL HOLDINGS</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#philosophy" class="hover:text-gold-300 transition-colors">Philosophy</a>
+                <a href="#pillars" class="hover:text-gold-300 transition-colors">Investment Pillars</a>
+                <a href="#architecture" class="hover:text-gold-300 transition-colors">Allocation Model</a>
+                <a href="#leadership" class="hover:text-gold-300 transition-colors">Leadership</a>
+                <a href="#regulatory" class="hover:text-gold-300 transition-colors">Legal Notice</a>
+            </nav>
+
+            <!-- Right Institutional Status Badge -->
+            <div class="hidden lg:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800/90 border border-gold-400/30 text-xs text-gold-200 tracking-wider uppercase">
+                <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+                <span>Private Family Office</span>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden p-2.5 rounded-lg text-gold-300 hover:bg-navy-800 border border-gold-400/20 focus:outline-none" aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="mobileMenuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden bg-navy-900/98 border-b border-gold-400/20 px-6 py-5 space-y-3">
+            <a href="#philosophy" class="mobile-link block py-2 text-sm text-slate-200 hover:text-gold-300 border-b border-white/5">Philosophy</a>
+            <a href="#pillars" class="mobile-link block py-2 text-sm text-slate-200 hover:text-gold-300 border-b border-white/5">Investment Pillars</a>
+            <a href="#architecture" class="mobile-link block py-2 text-sm text-slate-200 hover:text-gold-300 border-b border-white/5">Allocation Model</a>
+            <a href="#leadership" class="mobile-link block py-2 text-sm text-slate-200 hover:text-gold-300 border-b border-white/5">Leadership</a>
+            <a href="#regulatory" class="mobile-link block py-2 text-sm text-slate-200 hover:text-gold-300">Legal Notice</a>
+            <div class="pt-2 flex items-center gap-2 text-xs text-gold-300 uppercase tracking-widest">
+                <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+                <span>Single-Family Office • Proprietary Capital Only</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 hero-radial-bg subtle-grid border-b border-gold-400/15">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <!-- Centerpiece High-Precision Custom SVG Emblem (Matching the Amorn Capital Holdings Logo) -->
+            <div class="mx-auto mb-8 w-40 h-40 sm:w-48 sm:h-48 relative flex items-center justify-center">
+                <div class="absolute inset-0 rounded-full bg-gold-400/10 blur-2xl"></div>
+                <svg viewBox="0 0 240 240" class="w-full h-full relative z-10" filter="url(#emblemShadow)" role="img" aria-label="Amorn Capital Holdings Emblem">
+                    <!-- Outer Enso Dynamic Double-Swirl Crest -->
+                    <path d="M120,16 C178,16 224,62 224,120 C224,166 194,205 152,218 C185,200 207,164 207,122 C207,69 165,28 113,28 C75,28 43,50 27,82 C38,44 75,16 120,16 Z" fill="url(#goldMetallic)"/>
+                    <path d="M120,224 C62,224 16,178 16,120 C16,74 46,35 88,22 C55,40 33,76 33,118 C33,171 75,212 127,212 C165,212 197,190 213,158 C202,196 165,224 120,224 Z" fill="url(#goldHighlight)"/>
+                    <!-- Inner Interlocking Crescent Ribbons -->
+                    <path d="M195,72 C209,98 209,130 193,158 C178,184 150,200 120,201 C146,196 169,180 181,155 C195,128 194,96 180,71 C164,44 134,30 103,33 C140,24 176,41 195,72 Z" fill="url(#goldHighlight)" opacity="0.9"/>
+                    <path d="M45,168 C31,142 31,110 47,82 C62,56 90,40 120,39 C94,44 71,60 59,85 C45,112 46,144 60,169 C76,196 106,210 137,207 C100,216 64,199 45,168 Z" fill="url(#goldMetallic)" opacity="0.9"/>
+                    
+                    <!-- Bold Sculpted Chiseled Serif "A" -->
+                    <!-- Main A Silhouette -->
+                    <path d="M120,46 L168,172 L180,172 L180,181 L137,181 L137,172 L148,172 L136,141 L99,141 L87,172 L99,172 L99,181 L60,181 L60,172 L71,172 L116,46 Z M117.5,79 L103,126 L132,126 Z" fill="url(#goldMetallic)"/>
+                    <!-- Subtle 3D Bevel Highlight on Left & Crossbar -->
+                    <path d="M116,46 L120,46 L117.5,79 L87,172 L71,172 Z" fill="url(#goldHighlight)" opacity="0.65"/>
+                </svg>
+            </div>
+
+            <!-- Full Logo Typography Lockup (Without LLC) -->
+            <div class="mb-8">
+                <h1 class="font-display text-4xl sm:text-6xl font-bold tracking-[0.22em] gold-gradient-text drop-shadow">
+                    AMORN
+                </h1>
+                <p class="font-display text-sm sm:text-xl tracking-[0.34em] text-gold-300 mt-2 font-semibold">
+                    CAPITAL HOLDINGS
+                </p>
+            </div>
+
+            <!-- Eyebrow Location & Status Pill -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-navy-800/90 border border-gold-400/30 text-xs sm:text-sm text-gold-200 tracking-[0.18em] uppercase mb-8">
+                <span>Private Investment Office</span>
+                <span class="text-gold-400">•</span>
+                <span>Florida, USA</span>
+            </div>
+
+            <!-- Core Value Proposition Headline -->
+            <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight leading-tight max-w-4xl mx-auto mb-6">
+                Disciplined Capital Allocation.<br class="hidden sm:inline" />
+                <span class="font-normal italic text-gold-200">Generational Compounding.</span>
+            </h2>
+
+            <!-- Subheadline -->
+            <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed mb-10">
+                Amorn Capital Holdings manages proprietary family capital through a synthesis of fundamental value investing, systematic options cash-flow generation, and quantitative risk management.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#pillars" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 text-navy-950 font-semibold text-sm tracking-wider uppercase shadow-lg hover:brightness-110 transition-all">
+                    Explore Investment Pillars
+                </a>
+                <a href="#regulatory" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-navy-800/80 hover:bg-navy-700/80 text-gold-200 border border-gold-400/30 font-medium text-sm tracking-wider uppercase transition-all">
+                    Regulatory Mandate
+                </a>
+            </div>
+
+            <!-- Institutional Key Pillars Bar -->
+            <div class="mt-16 pt-10 border-t border-gold-400/15 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+                <div class="p-4 rounded-xl bg-navy-900/60 border border-white/5">
+                    <p class="text-xs uppercase tracking-widest text-gold-400 font-medium">Capital Structure</p>
+                    <p class="text-lg sm:text-xl font-serif font-semibold text-white mt-1">100% Proprietary</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Permanent family capital</p>
+                </div>
+                <div class="p-4 rounded-xl bg-navy-900/60 border border-white/5">
+                    <p class="text-xs uppercase tracking-widest text-gold-400 font-medium">Core Methodology</p>
+                    <p class="text-lg sm:text-xl font-serif font-semibold text-white mt-1">Value & Quantitative</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Fundamental moat + algorithms</p>
+                </div>
+                <div class="p-4 rounded-xl bg-navy-900/60 border border-white/5">
+                    <p class="text-xs uppercase tracking-widest text-gold-400 font-medium">Yield Architecture</p>
+                    <p class="text-lg sm:text-xl font-serif font-semibold text-white mt-1">Synthetic Float</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Options premium & dividends</p>
+                </div>
+                <div class="p-4 rounded-xl bg-navy-900/60 border border-white/5">
+                    <p class="text-xs uppercase tracking-widest text-gold-400 font-medium">Jurisdiction</p>
+                    <p class="text-lg sm:text-xl font-serif font-semibold text-white mt-1">Florida, USA</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Single-Family Office structure</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Philosophy Section -->
+    <section id="philosophy" class="py-20 md:py-28 bg-navy-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <p class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-3">Investment Philosophy</p>
+                <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-white">
+                    Patient Stewardship Meets Scientific Rigor
+                </h2>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto my-5"></div>
+                <p class="text-slate-300 text-base sm:text-lg font-light leading-relaxed">
+                    Operating without external redemption pressures allows Amorn Capital Holdings to allocate capital across multi-decade horizons—combining classic business-owner valuation principles with systematic statistical execution.
+                </p>
+            </div>
+
+            <!-- 3 Core Tenets Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tenet 1 -->
+                <div class="p-8 rounded-2xl bg-navy-800/75 border gold-border-glow transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-400/10 border border-gold-400/30 flex items-center justify-center text-gold-300 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <span class="text-xs font-mono uppercase tracking-widest text-gold-400">Principle 01</span>
+                        <h3 class="font-serif text-xl font-semibold text-white mt-2 mb-3">Capital Preservation First</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Inspired by classic value stewardship, our primary mandate is the elimination of permanent capital impairment. Every equity position and derivative contract is stress-tested for margin of safety, balance-sheet durability, and asymmetric downside protection.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/5 text-xs text-gold-200/80 flex items-center justify-between">
+                        <span>Risk Criterion</span>
+                        <span class="font-mono">Defined Margin of Safety</span>
+                    </div>
+                </div>
+
+                <!-- Tenet 2 -->
+                <div class="p-8 rounded-2xl bg-navy-800/75 border gold-border-glow transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-400/10 border border-gold-400/30 flex items-center justify-center text-gold-300 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                            </svg>
+                        </div>
+                        <span class="text-xs font-mono uppercase tracking-widest text-gold-400">Principle 02</span>
+                        <h3 class="font-serif text-xl font-semibold text-white mt-2 mb-3">Synthetic Float & Compounding</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            By systematically underwriting Cash-Secured Puts, Covered Calls, and risk-defined credit spreads against high-grade collateral, we generate recurring cash flow that functions as a self-replenishing float—continuously reinvested into compounding core equities.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/5 text-xs text-gold-200/80 flex items-center justify-between">
+                        <span>Cash-Flow Engine</span>
+                        <span class="font-mono">Systematic Premium + Yield</span>
+                    </div>
+                </div>
+
+                <!-- Tenet 3 -->
+                <div class="p-8 rounded-2xl bg-navy-800/75 border gold-border-glow transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-400/10 border border-gold-400/30 flex items-center justify-center text-gold-300 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <span class="text-xs font-mono uppercase tracking-widest text-gold-400">Principle 03</span>
+                        <h3 class="font-serif text-xl font-semibold text-white mt-2 mb-3">Scientific & Data-Driven Execution</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Emotion is removed from market participation through custom quantitative screening. Position sizing, entry timing, and volatility regime adjustments are governed by objective statistical models and automated technical telemetry.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/5 text-xs text-gold-200/80 flex items-center justify-between">
+                        <span>Execution Protocol</span>
+                        <span class="font-mono">Quantitative & Rule-Based</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="gold-divider"></div>
+
+    <!-- Three Investment Pillars Section -->
+    <section id="pillars" class="py-20 md:py-28 bg-navy-950 subtle-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <p class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-3">Core Mandate</p>
+                <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-white">
+                    Three Pillars of Capital Deployment
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg font-light mt-4">
+                    Our portfolio architecture integrates long-duration equity ownership with systematic derivative income and algorithmic market analytics.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Pillar I -->
+                <div class="rounded-2xl bg-gradient-to-b from-navy-800/90 to-navy-900/95 border border-gold-400/25 p-8 flex flex-col justify-between hover:border-gold-400/50 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="px-3 py-1 rounded-md bg-gold-400/15 border border-gold-400/30 text-gold-300 font-display text-xs tracking-widest uppercase">Pillar I</span>
+                            <span class="text-xs font-mono text-slate-400">Core Compounding</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-semibold text-white mb-4">
+                            Fundamental Value & Dividend Growth
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Long-term ownership in businesses possessing durable competitive moats, high returns on invested capital, and fortress balance sheets, paired with broad market index and dividend-growth ETFs.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-gold-400 mt-1">◆</span>
+                                <span>Intrinsic value accumulation during market dislocations</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-gold-400 mt-1">◆</span>
+                                <span>Automatic dividend reinvestment into undervalued core holdings</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-gold-400 mt-1">◆</span>
+                                <span>Low-turnover tax-efficient holding periods</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-5 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 uppercase tracking-wider">Target Allocation Weight</span>
+                        <span class="font-mono text-sm font-semibold text-gold-300">50% – 60%</span>
+                    </div>
+                </div>
+
+                <!-- Pillar II -->
+                <div class="rounded-2xl bg-gradient-to-b from-navy-800/90 to-navy-900/95 border border-gold-400/25 p-8 flex flex-col justify-between hover:border-gold-400/50 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="px-3 py-1 rounded-md bg-gold-400/15 border border-gold-400/30 text-gold-300 font-display text-xs tracking-widest uppercase">Pillar II</span>
+                            <span class="text-xs font-mono text-slate-400">Synthetic Float</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-semibold text-white mb-4">
+                            Systematic Options & Yield Generation
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Disciplined harvesting of option time-decay (Theta) and implied volatility premiums using Cash-Secured Puts, Covered Calls, Wheel rotations, and defined-risk vertical spreads.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-gold-400 mt-1">◆</span>
+                                <span>Paid to wait for value entry via Cash-Secured Puts at discount strikes</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-gold-400 mt-1">◆</span>
+                                <span>Double-yield structure backed by short-duration cash equivalents</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-gold-400 mt-1">◆</span>
+                                <span>Strict probability-of-profit (POP) and Delta thresholds</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-5 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 uppercase tracking-wider">Target Allocation Weight</span>
+                        <span class="font-mono text-sm font-semibold text-gold-300">30% – 35%</span>
+                    </div>
+                </div>
+
+                <!-- Pillar III -->
+                <div class="rounded-2xl bg-gradient-to-b from-navy-800/90 to-navy-900/95 border border-gold-400/25 p-8 flex flex-col justify-between hover:border-gold-400/50 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="px-3 py-1 rounded-md bg-gold-400/15 border border-gold-400/30 text-gold-300 font-display text-xs tracking-widest uppercase">Pillar III</span>
+                            <span class="text-xs font-mono text-slate-400">Risk Telemetry</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-semibold text-white mb-4">
+                            Quantitative Market Research
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Proprietary Python-based analytical pipelines that evaluate volatility regimes, trend alignment, mean-reversion extremes, and dynamic position sizing across equities and derivatives.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-gold-400 mt-1">◆</span>
+                                <span>ATR-normalized volatility position sizing and risk caps</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-gold-400 mt-1">◆</span>
+                                <span>Multi-timeframe RSI, moving-average, and volume anomaly screening</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-gold-400 mt-1">◆</span>
+                                <span>Strategic dry-powder reserve for high-volatility regime deployment</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-5 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-slate-400 uppercase tracking-wider">Strategic Reserve Weight</span>
+                        <span class="font-mono text-sm font-semibold text-gold-300">10% – 15%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Portfolio Architecture & Quantitative Risk Matrix Section -->
+    <section id="architecture" class="py-20 md:py-28 bg-navy-900 border-t border-b border-gold-400/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-2">Capital Architecture</p>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-white">
+                        Strategic Allocation & Risk Blueprint
+                    </h2>
+                </div>
+                
+                <!-- Interactive View Switcher Tabs -->
+                <div class="inline-flex p-1 rounded-xl bg-navy-950 border border-gold-400/25 self-start">
+                    <button id="tabAllocationBtn" onclick="switchBlueprintTab('allocation')" class="px-5 py-2.5 rounded-lg text-xs sm:text-sm font-medium tracking-wider uppercase transition-all bg-gold-400 text-navy-950 shadow">
+                        Strategic Allocation Model
+                    </button>
+                    <button id="tabRiskBtn" onclick="switchBlueprintTab('risk')" class="px-5 py-2.5 rounded-lg text-xs sm:text-sm font-medium tracking-wider uppercase transition-all text-slate-300 hover:text-white">
+                        Quantitative Risk Matrix
+                    </button>
+                </div>
+            </div>
+
+            <!-- TAB 1: Strategic Allocation Model -->
+            <div id="panelAllocation" class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-navy-800/60 rounded-2xl p-6 sm:p-10 border border-gold-400/20">
+                
+                <!-- Left: Interactive Donut Chart -->
+                <div class="lg:col-span-5 flex flex-col items-center">
+                    <div class="relative w-64 h-64 sm:w-72 sm:h-72">
+                        <svg viewBox="0 0 42 42" class="w-full h-full -rotate-90">
+                            <!-- Background Ring -->
+                            <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#06101E" stroke-width="6"></circle>
+                            
+                            <!-- Segment 1: Core Equities (55%) -->
+                            <circle id="seg-equities" onclick="selectAllocationSegment('equities')" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#D4AF37" stroke-width="7.2" stroke-dasharray="55 45" stroke-dashoffset="0" class="donut-segment"></circle>
+                            
+                            <!-- Segment 2: Options Float & Short-Term Treasuries (35%) -->
+                            <circle id="seg-float" onclick="selectAllocationSegment('float')" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#38BDF8" stroke-width="6.5" stroke-dasharray="35 65" stroke-dashoffset="-55" class="donut-segment"></circle>
+                            
+                            <!-- Segment 3: Strategic Dry Powder (10%) -->
+                            <circle id="seg-powder" onclick="selectAllocationSegment('powder')" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#10B981" stroke-width="6.5" stroke-dasharray="10 90" stroke-dashoffset="-90" class="donut-segment"></circle>
+                        </svg>
+                        <!-- Center Label -->
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
+                            <span id="donutCenterShare" class="font-display text-3xl sm:text-4xl font-bold text-gold-300">55%</span>
+                            <span id="donutCenterLabel" class="text-xs sm:text-sm font-medium text-white mt-1">Core Value & ETFs</span>
+                            <span class="text-[11px] text-slate-400 mt-1">Click segment to inspect</span>
+                        </div>
+                    </div>
+
+                    <!-- Legend Pills -->
+                    <div class="flex flex-wrap justify-center gap-3 mt-6">
+                        <button onclick="selectAllocationSegment('equities')" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-navy-950/80 border border-gold-400/30 text-xs text-slate-200 hover:border-gold-400">
+                            <span class="w-2.5 h-2.5 rounded-full bg-gold-400"></span>
+                            <span>Core Equities (55%)</span>
+                        </button>
+                        <button onclick="selectAllocationSegment('float')" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-navy-950/80 border border-sky-400/30 text-xs text-slate-200 hover:border-sky-400">
+                            <span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span>
+                            <span>Options Float (35%)</span>
+                        </button>
+                        <button onclick="selectAllocationSegment('powder')" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-navy-950/80 border border-emerald-400/30 text-xs text-slate-200 hover:border-emerald-400">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                            <span>Dry Powder (10%)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive Segment Breakdown Details -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="p-6 rounded-xl bg-navy-950/90 border border-gold-400/25">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+                            <div>
+                                <span id="detailTag" class="text-xs font-mono uppercase tracking-widest text-gold-400">Primary Compounding Engine</span>
+                                <h3 id="detailTitle" class="font-serif text-2xl font-semibold text-white mt-1">Core Value Equities & Dividend Growth (55%)</h3>
+                            </div>
+                            <span id="detailBadge" class="px-3 py-1 rounded-full bg-gold-400/15 text-gold-300 font-mono text-sm font-semibold">55% Weight</span>
+                        </div>
+                        <p id="detailDesc" class="text-slate-300 text-sm leading-relaxed mb-5">
+                            Anchored in high-moat enterprises and broad market index ETFs held for multi-year compounding. Cash flow generated from Pillar II option premiums and quarterly dividends is systematically channeled into this sleeve during market pullbacks.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                            <div class="p-3.5 rounded-lg bg-navy-900 border border-white/5">
+                                <span class="text-slate-400 block mb-1">Primary Instruments</span>
+                                <span id="detailInstruments" class="text-white font-medium">Wide-Moat Equities, S&P 500 & Dividend Growth ETFs</span>
+                            </div>
+                            <div class="p-3.5 rounded-lg bg-navy-900 border border-white/5">
+                                <span class="text-slate-400 block mb-1">Risk & Enhancement Protocol</span>
+                                <span id="detailProtocol" class="text-white font-medium">Covered Call Overwriting at Low-Delta Resistance Levels</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Allocation Progress Bars -->
+                    <div class="space-y-4">
+                        <div onclick="selectAllocationSegment('equities')" class="cursor-pointer group">
+                            <div class="flex justify-between text-xs mb-1.5">
+                                <span class="text-slate-200 font-medium group-hover:text-gold-300 transition-colors">I. Core Value & Dividend Growth Equities</span>
+                                <span class="font-mono text-gold-300">55%</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-navy-950 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-gold-500 to-gold-300 rounded-full" style="width: 55%"></div>
+                            </div>
+                        </div>
+
+                        <div onclick="selectAllocationSegment('float')" class="cursor-pointer group">
+                            <div class="flex justify-between text-xs mb-1.5">
+                                <span class="text-slate-200 font-medium group-hover:text-sky-300 transition-colors">II. Systematic Options Float & Yield Collateral</span>
+                                <span class="font-mono text-sky-300">35%</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-navy-950 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-sky-500 to-sky-300 rounded-full" style="width: 35%"></div>
+                            </div>
+                        </div>
+
+                        <div onclick="selectAllocationSegment('powder')" class="cursor-pointer group">
+                            <div class="flex justify-between text-xs mb-1.5">
+                                <span class="text-slate-200 font-medium group-hover:text-emerald-300 transition-colors">III. Strategic Dry Powder & Opportunity Reserve</span>
+                                <span class="font-mono text-emerald-300">10%</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-navy-950 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-emerald-500 to-emerald-300 rounded-full" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: Quantitative Risk Matrix (Hidden by default) -->
+            <div id="panelRisk" class="hidden bg-navy-800/60 rounded-2xl p-6 sm:p-10 border border-gold-400/20">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-6 rounded-xl bg-navy-950/90 border border-gold-400/20">
+                        <span class="text-xs font-mono text-gold-400 uppercase tracking-widest">Parameter 01</span>
+                        <h4 class="font-serif text-lg font-semibold text-white mt-1 mb-2">ATR Volatility Position Sizing</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Individual position sizes are normalized against 14-day Average True Range (ATR) so high-volatility assets receive proportionally smaller capital commitments.
+                        </p>
+                        <div class="text-xs font-mono text-gold-300 pt-3 border-t border-white/10">
+                            Max Single-Trade Risk: ≤ 1.5% of NAV
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-navy-950/90 border border-gold-400/20">
+                        <span class="text-xs font-mono text-gold-400 uppercase tracking-widest">Parameter 02</span>
+                        <h4 class="font-serif text-lg font-semibold text-white mt-1 mb-2">Option Underwriting Guardrails</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Short put and call legs are initiated primarily within the 0.15 to 0.30 Delta band with 30–45 DTE, targeting optimal Theta decay and a statistical cushion.
+                        </p>
+                        <div class="text-xs font-mono text-gold-300 pt-3 border-t border-white/10">
+                            Target POP: 70% – 85% Probability
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-navy-950/90 border border-gold-400/20">
+                        <span class="text-xs font-mono text-gold-400 uppercase tracking-widest">Parameter 03</span>
+                        <h4 class="font-serif text-lg font-semibold text-white mt-1 mb-2">Mean-Reversion & Trend Filters</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Cash-Secured Puts are deployed when quality underlyings approach oversold RSI regimes near structural 200-day moving average support.
+                        </p>
+                        <div class="text-xs font-mono text-gold-300 pt-3 border-t border-white/10">
+                            Signal Engine: Python Quantitative Screener
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-navy-950/90 border border-gold-400/20">
+                        <span class="text-xs font-mono text-gold-400 uppercase tracking-widest">Parameter 04</span>
+                        <h4 class="font-serif text-lg font-semibold text-white mt-1 mb-2">Zero Uncovered Leverage</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            The office prohibits naked short calls or unbounded derivative liabilities. All option obligations are 100% cash-secured, equity-covered, or spread-defined.
+                        </p>
+                        <div class="text-xs font-mono text-gold-300 pt-3 border-t border-white/10">
+                            Tail-Risk Exposure: Strictly Capped
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-navy-950/90 border border-gold-400/20">
+                        <span class="text-xs font-mono text-gold-400 uppercase tracking-widest">Parameter 05</span>
+                        <h4 class="font-serif text-lg font-semibold text-white mt-1 mb-2">Systematic Premium Reinvestment</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Realized option premiums and interest income are swept monthly into long-duration core equities, creating self-funding share accumulation.
+                        </p>
+                        <div class="text-xs font-mono text-gold-300 pt-3 border-t border-white/10">
+                            Compounding Cadence: Monthly Sweep
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-navy-950/90 border border-gold-400/20">
+                        <span class="text-xs font-mono text-gold-400 uppercase tracking-widest">Parameter 06</span>
+                        <h4 class="font-serif text-lg font-semibold text-white mt-1 mb-2">Executive Work-Life Equilibrium</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Automated alerts and end-of-day batch screening eliminate the need for continuous screen monitoring, preserving cognitive clarity and long-term discipline.
+                        </p>
+                        <div class="text-xs font-mono text-gold-300 pt-3 border-t border-white/10">
+                            Review Horizon: Daily End-of-Session
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="py-20 md:py-28 bg-navy-950 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <p class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-3">Executive Stewardship</p>
+                <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-white">
+                    Leadership & Principal Profile
+                </h2>
+            </div>
+
+            <!-- Executive Bio Card -->
+            <div class="rounded-2xl bg-gradient-to-br from-navy-800/90 via-navy-900 to-navy-950 border gold-border-glow p-8 sm:p-12">
+                <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+                    
+                    <!-- Left Monogram Crest Column -->
+                    <div class="w-full md:w-56 flex-shrink-0 flex flex-col items-center text-center p-6 rounded-xl bg-navy-950/90 border border-gold-400/25">
+                        <div class="w-24 h-24 rounded-full bg-navy-800 border-2 border-gold-400/50 flex items-center justify-center mb-4 shadow-inner">
+                            <span class="font-display text-3xl font-bold gold-gradient-text">NA</span>
+                        </div>
+                        <span class="font-display text-xs tracking-[0.2em] text-gold-300 uppercase">Managing Principal</span>
+                        <span class="text-xs text-slate-400 mt-1">Miami-Dade, Florida</span>
+                        <div class="w-full h-px bg-white/10 my-4"></div>
+                        <div class="text-[11px] text-slate-300 space-y-1.5 text-left w-full">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Degree:</span>
+                                <span class="font-medium text-gold-200">Ph.D.</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Discipline:</span>
+                                <span class="font-medium text-white">Analytical Chem.</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Research:</span>
+                                <span class="font-medium text-white">15+ Years</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Narrative Bio Column -->
+                    <div class="flex-1">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gold-400/20 pb-5 mb-6">
+                            <div>
+                                <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-white">
+                                    Natchanon Amornthammarong, Ph.D.
+                                </h3>
+                                <p class="text-gold-300 font-medium text-sm sm:text-base tracking-wide mt-1">
+                                    Founder & Managing Principal — Amorn Capital Holdings
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+                            <p>
+                                Dr. Natchanon Amornthammarong founded <strong class="text-white font-medium">Amorn Capital Holdings</strong> to steward and compound family capital with institutional rigor and multi-generational continuity.
+                            </p>
+                            <p>
+                                Holding a Ph.D. in Analytical Chemistry and bringing nearly 15 years of scientific research experience in ocean chemistry and autonomous sensor engineering at NOAA’s Atlantic Oceanographic and Meteorological Laboratory (AOML) and the University of Miami’s Cooperative Institute for Marine and Atmospheric Studies, Dr. Amornthammarong bridges empirical scientific inquiry with disciplined financial decision-making.
+                            </p>
+                            <p>
+                                At Amorn Capital Holdings, he applies the scientific method, statistical signal processing, and quantitative systems engineering to equity valuation, derivative cash-flow underwriting, and portfolio risk architecture.
+                            </p>
+                        </div>
+
+                        <!-- Focus Tags -->
+                        <div class="mt-8 pt-6 border-t border-white/10">
+                            <p class="text-xs uppercase tracking-widest text-slate-400 mb-3">Core Areas of Focus</p>
+                            <div class="flex flex-wrap gap-2.5">
+                                <span class="px-3.5 py-1.5 rounded-full bg-navy-950 border border-gold-400/30 text-xs text-gold-200">Quantitative Systems</span>
+                                <span class="px-3.5 py-1.5 rounded-full bg-navy-950 border border-gold-400/30 text-xs text-gold-200">Options Cash-Flow Strategy</span>
+                                <span class="px-3.5 py-1.5 rounded-full bg-navy-950 border border-gold-400/30 text-xs text-gold-200">Fundamental Value Investing</span>
+                                <span class="px-3.5 py-1.5 rounded-full bg-navy-950 border border-gold-400/30 text-xs text-gold-200">Statistical Risk Architecture</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Institutional Footer & Strict Regulatory Disclaimer -->
+    <footer id="regulatory" class="bg-navy-950 border-t border-gold-400/25 pt-16 pb-14">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Mandatory SEC & Regulatory Compliance Box -->
+            <div class="p-6 sm:p-8 rounded-2xl bg-navy-900/90 border border-gold-400/30 mb-12 shadow-xl">
+                <div class="flex items-center gap-3 mb-3">
+                    <svg class="w-5 h-5 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                    <h4 class="font-display text-xs sm:text-sm font-bold tracking-[0.2em] text-gold-300 uppercase">
+                        Mandatory Regulatory Notice & Private Office Mandate
+                    </h4>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+                    <strong>IMPORTANT DISCLOSURE:</strong> Amorn Capital Holdings operates exclusively as a private single-family office managing proprietary assets for its founding family. Amorn Capital Holdings is <strong>NOT</strong> a registered investment advisor (RIA), broker-dealer, commodity pool operator, or public investment fund under the U.S. Investment Advisers Act of 1940 or Florida Statutes. We do not solicit, accept, or manage capital from third-party investors or the general public. All content presented on this website is for institutional identification and informational purposes only and does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation for any security or investment advisory service.
+                </p>
+            </div>
+
+            <!-- Bottom Brand & Contact Metadata -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-400 pt-4 border-t border-white/10">
+                <div class="flex items-center gap-3">
+                    <span class="font-display font-bold tracking-[0.2em] text-gold-300">AMORN CAPITAL HOLDINGS</span>
+                    <span>•</span>
+                    <span>Miami-Dade County, Florida, United States</span>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <button onclick="copyOfficialProfile()" class="px-3.5 py-1.5 rounded-lg bg-navy-900 hover:bg-navy-800 text-gold-200 border border-gold-400/25 transition-colors flex items-center gap-2">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                        <span id="copyBtnText">Copy Official Verification Text</span>
+                    </button>
+                    <span>© <span id="currentYear">2026</span> Amorn Capital Holdings. All Rights Reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript Logic -->
+    <script>
+        // Set current year dynamically
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Switch between Strategic Allocation Model and Quantitative Risk Matrix tabs
+        function switchBlueprintTab(tab) {
+            const panelAllocation = document.getElementById('panelAllocation');
+            const panelRisk = document.getElementById('panelRisk');
+            const tabAllocationBtn = document.getElementById('tabAllocationBtn');
+            const tabRiskBtn = document.getElementById('tabRiskBtn');
+
+            if (tab === 'allocation') {
+                panelAllocation.classList.remove('hidden');
+                panelRisk.classList.add('hidden');
+                tabAllocationBtn.className = 'px-5 py-2.5 rounded-lg text-xs sm:text-sm font-medium tracking-wider uppercase transition-all bg-gold-400 text-navy-950 shadow';
+                tabRiskBtn.className = 'px-5 py-2.5 rounded-lg text-xs sm:text-sm font-medium tracking-wider uppercase transition-all text-slate-300 hover:text-white';
+            } else {
+                panelAllocation.classList.add('hidden');
+                panelRisk.classList.remove('hidden');
+                tabRiskBtn.className = 'px-5 py-2.5 rounded-lg text-xs sm:text-sm font-medium tracking-wider uppercase transition-all bg-gold-400 text-navy-950 shadow';
+                tabAllocationBtn.className = 'px-5 py-2.5 rounded-lg text-xs sm:text-sm font-medium tracking-wider uppercase transition-all text-slate-300 hover:text-white';
+            }
+        }
+
+        // Interactive Allocation Segment Data
+        const allocationData = {
+            equities: {
+                share: '55%',
+                shortLabel: 'Core Value & ETFs',
+                tag: 'Primary Compounding Engine',
+                title: 'Core Value Equities & Dividend Growth (55%)',
+                badge: '55% Weight',
+                desc: 'Anchored in high-moat enterprises and broad market index ETFs held for multi-year compounding. Cash flow generated from Pillar II option premiums and quarterly dividends is systematically channeled into this sleeve during market pullbacks.',
+                instruments: 'Wide-Moat Equities, S&P 500 & Dividend Growth ETFs',
+                protocol: 'Covered Call Overwriting at Low-Delta Resistance Levels'
+            },
+            float: {
+                share: '35%',
+                shortLabel: 'Options Float',
+                tag: 'Synthetic Cash-Flow Generator',
+                title: 'Systematic Options Float & Yield Collateral (35%)',
+                badge: '35% Weight',
+                desc: 'Dedicated collateral underwriting Cash-Secured Puts, Wheel rotations, and defined-risk vertical credit spreads. Functions as a self-replenishing synthetic float that harvests time decay (Theta) and implied volatility premiums.',
+                instruments: 'Cash-Secured Puts, Covered Strangles & Credit Spreads',
+                protocol: '100% Cash/Collateral Backed • 0.15–0.30 Delta Band'
+            },
+            powder: {
+                share: '10%',
+                shortLabel: 'Dry Powder',
+                tag: 'Liquidity & Dislocation Reserve',
+                title: 'Strategic Dry Powder & Opportunity Reserve (10%)',
+                badge: '10% Weight',
+                desc: 'Held in high-liquidity cash equivalents to preserve optionality during periods of elevated market stress or VIX spikes, enabling decisive acquisition of quality assets at deep discounts.',
+                instruments: 'High-Yield Cash Sweep & Short-Duration Liquid Reserves',
+                protocol: 'Deployed Systematically on Volatility & RSI Extremes'
+            }
+        };
+
+        function selectAllocationSegment(key) {
+            const item = allocationData[key];
+            if (!item) return;
+
+            document.getElementById('donutCenterShare').textContent = item.share;
+            document.getElementById('donutCenterLabel').textContent = item.shortLabel;
+            document.getElementById('detailTag').textContent = item.tag;
+            document.getElementById('detailTitle').textContent = item.title;
+            document.getElementById('detailBadge').textContent = item.badge;
+            document.getElementById('detailDesc').textContent = item.desc;
+            document.getElementById('detailInstruments').textContent = item.instruments;
+            document.getElementById('detailProtocol').textContent = item.protocol;
+
+            // Highlight active segment stroke width
+            ['equities', 'float', 'powder'].forEach(seg => {
+                const el = document.getElementById('seg-' + seg);
+                if (seg === key) {
+                    el.setAttribute('stroke-width', '8.2');
+                    el.setAttribute('opacity', '1');
+                } else {
+                    el.setAttribute('stroke-width', '6');
+                    el.setAttribute('opacity', '0.72');
+                }
+            });
+        }
+
+        // Copy Official Verification Text (for forms, applications, or records)
+        function copyOfficialProfile() {
+            const textToCopy = "Organization: Amorn Capital Holdings | Role: Founder & Managing Principal (Natchanon Amornthammarong, Ph.D.) | Mandate: Private Single-Family Investment Office — Quantitative Market Research, Systematic Options Strategy, and Proprietary Asset Allocation | Location: Florida, USA";
+            const tempInput = document.createElement('textarea');
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const copyBtnText = document.getElementById('copyBtnText');
+            const originalText = copyBtnText.textContent;
+            copyBtnText.textContent = "Copied Official Profile!";
+            setTimeout(() => {
+                copyBtnText.textContent = originalText;
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
