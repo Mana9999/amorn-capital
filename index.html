@@ -86,7 +86,7 @@
             background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.5) 50%, transparent 100%);
         }
 
-        /* Automatic Black-Background Removal for Logo3_2.jpg via Screen Blend & Soft Radial Mask */
+        /* Automatic Black-Background Removal for Logo3.png via Screen Blend & Soft Radial Mask */
         .logo-blend-screen {
             mix-blend-mode: screen;
             -webkit-mask-image: radial-gradient(ellipse 88% 86% at 50% 50%, #000 74%, transparent 100%);
@@ -94,7 +94,7 @@
             filter: contrast(1.06) brightness(1.04);
         }
 
-        /* Cropped Emblem-Only View for Top Navbar Icon using Logo3_2.jpg */
+        /* Cropped Emblem-Only View for Top Navbar Icon using Logo3.png */
         .navbar-logo-crop {
             mix-blend-mode: screen;
             object-fit: cover;
@@ -147,8 +147,8 @@
             <!-- Brand Emblem + Name -->
             <a href="#" class="flex items-center gap-3.5 group focus:outline-none">
                 <div class="w-11 h-11 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center bg-navy-950 border border-gold-400/25 transition-transform duration-300 group-hover:scale-105">
-                    <!-- Actual Logo3_2.jpg cropped to top circular emblem, with automatic fallback -->
-                    <img id="navLogoImg" src="Logo3_2.jpg" alt="Amorn Capital Holdings Emblem" class="w-full h-full navbar-logo-crop" onerror="handleLogoFallback(this, 'nav')" />
+                    <!-- Actual Logo3.png cropped to top circular emblem, with automatic fallback -->
+                    <img id="navLogoImg" src="Logo3.png" alt="Amorn Capital Holdings Emblem" class="w-full h-full navbar-logo-crop" onerror="handleLogoFallback(this, 'nav')" />
                     <svg id="navLogoFallback" viewBox="0 0 200 200" class="w-full h-full hidden">
                         <path d="M100,14 C148,14 186,52 186,100 C186,138 161,170 126,181 C154,166 172,136 172,102 C172,58 137,24 94,24 C63,24 36,42 23,69 C32,37 63,14 100,14 Z" fill="url(#goldMetallic)"/>
                         <path d="M100,186 C52,186 14,148 14,100 C14,62 39,30 74,19 C46,34 28,64 28,98 C28,142 63,176 106,176 C137,176 164,158 177,131 C168,163 137,186 100,186 Z" fill="url(#goldHighlight)"/>
@@ -203,16 +203,16 @@
     <section class="relative pt-28 pb-20 md:pt-36 md:pb-28 hero-radial-bg subtle-grid border-b border-gold-400/15">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             
-            <!-- Centerpiece 3D Gold Logo Image (Logo3_2.jpg) with Automatic Black-Background Transparency -->
+            <!-- Centerpiece 3D Gold Logo Image (Logo3.png) with Automatic Black-Background Transparency -->
             <div class="mx-auto mb-6 relative flex flex-col items-center justify-center">
                 <!-- Ambient Gold Backlight Glow -->
                 <div class="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gold-400/10 blur-3xl pointer-events-none"></div>
 
-                <!-- Primary Image Tag loading Logo3_2.jpg directly from the same GitHub repository -->
+                <!-- Primary Image Tag loading Logo3.png directly from the same GitHub repository -->
                 <div id="heroLogoImageContainer" class="relative z-10 w-full max-w-[440px] sm:max-w-[520px] mx-auto transition-transform duration-500 hover:scale-[1.015]">
                     <img 
                         id="heroLogoImg"
-                        src="Logo3_2.jpg" 
+                        src="Logo3.png" 
                         alt="Amorn Capital Holdings Official 3D Gold Logo" 
                         class="w-full h-auto mx-auto logo-blend-screen select-none"
                         onload="onHeroLogoLoaded()"
@@ -220,11 +220,11 @@
                     />
                 </div>
 
-                <!-- High-Precision 3D Chiseled Gold Fallback (Only shown if Logo3_2.jpg is not yet placed in the same folder) -->
+                <!-- High-Precision 3D Chiseled Gold Fallback (Only shown if Logo3.png is not yet placed in the same folder) -->
                 <div id="heroLogoFallbackContainer" class="hidden relative z-10 flex-col items-center">
                     <div class="w-44 h-44 sm:w-52 sm:h-52 mx-auto mb-4">
                         <svg viewBox="0 0 260 260" class="w-full h-full" filter="url(#emblemShadow)" role="img" aria-label="Amorn Capital Holdings 3D Gold Emblem">
-                            <!-- Outer Sweeping 3D Gold Swirl Crest matching Logo3_2.jpg -->
+                            <!-- Outer Sweeping 3D Gold Swirl Crest matching Logo3.png -->
                             <path d="M130,18 C192,18 242,68 242,130 C242,180 209,222 164,236 C200,217 224,178 224,132 C224,75 178,30 122,30 C81,30 46,54 29,89 C41,48 81,18 130,18 Z" fill="url(#goldMetallic)"/>
                             <path d="M130,242 C68,242 18,192 18,130 C18,80 51,38 96,24 C60,43 36,82 36,128 C36,185 82,230 138,230 C179,230 214,206 231,171 C219,212 179,242 130,242 Z" fill="url(#goldHighlight)"/>
                             <path d="M210,78 C226,106 226,141 209,171 C193,199 162,216 130,217 C158,212 183,195 196,168 C211,139 210,104 195,77 C177,48 145,33 112,36 C152,26 190,44 210,78 Z" fill="url(#goldHighlight)" opacity="0.92"/>
@@ -243,13 +243,13 @@
                             CAPITAL HOLDINGS
                         </p>
                     </div>
-                    <!-- Local Sandbox Preview Loader Button (Hidden automatically on live site once Logo3_2.jpg is present) -->
+                    <!-- Local Sandbox Preview Loader Button (Hidden automatically on live site once Logo3.png is present) -->
                     <div id="localPreviewControl" class="mt-2 mb-3">
                         <label class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800/90 hover:bg-navy-700 text-[11px] text-gold-300 border border-gold-400/35 cursor-pointer transition-all shadow">
                             <svg class="w-3.5 h-3.5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                             </svg>
-                            <span>Preview with your local <strong>Logo3_2.jpg</strong> file</span>
+                            <span>Preview with your local <strong>Logo3.png</strong> file</span>
                             <input type="file" accept="image/*" class="hidden" onchange="previewLocalLogoFile(event)" />
                         </label>
                     </div>
@@ -840,8 +840,8 @@
         // Set current year dynamically
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // Automatic Fallback Chain for Logo3_2.jpg -> logo.png -> Logo3.png -> 3D SVG Replica
-        const fallbackCandidates = ['logo.png', 'Logo3.png', 'Logo3_2.png'];
+        // Automatic Fallback Chain for Logo3.png -> logo.png -> Logo3.png -> 3D SVG Replica
+        const fallbackCandidates = ['logo.png', 'Logo3.png', 'Logo3.png'];
         let heroFallbackIndex = 0;
         let navFallbackIndex = 0;
 
@@ -860,7 +860,7 @@
                 if (heroFallbackIndex < fallbackCandidates.length) {
                     imgEl.src = fallbackCandidates[heroFallbackIndex++];
                 } else {
-                    // Show high-precision 3D SVG fallback + local preview button if Logo3_2.jpg hasn't been uploaded yet
+                    // Show high-precision 3D SVG fallback + local preview button if Logo3.png hasn't been uploaded yet
                     document.getElementById('heroLogoImageContainer').classList.add('hidden');
                     const fallbackContainer = document.getElementById('heroLogoFallbackContainer');
                     fallbackContainer.classList.remove('hidden');
@@ -876,7 +876,7 @@
             }
         }
 
-        // Allow instant preview of local Logo3_2.jpg inside the browser preview window
+        // Allow instant preview of local Logo3.png inside the browser preview window
         function previewLocalLogoFile(event) {
             const file = event.target.files && event.target.files[0];
             if (!file) return;
