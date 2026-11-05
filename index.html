@@ -86,20 +86,13 @@
             background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.5) 50%, transparent 100%);
         }
 
-        /* Automatic Black-Background Removal for Logo3.png via Screen Blend & Soft Radial Mask */
-        .logo-blend-screen {
-            mix-blend-mode: screen;
-            -webkit-mask-image: radial-gradient(ellipse 88% 86% at 50% 50%, #000 74%, transparent 100%);
-            mask-image: radial-gradient(ellipse 88% 86% at 50% 50%, #000 74%, transparent 100%);
-            filter: contrast(1.06) brightness(1.04);
-        }
-
-        /* Cropped Emblem-Only View for Top Navbar Icon using Logo3.png */
-        .navbar-logo-crop {
-            mix-blend-mode: screen;
-            object-fit: cover;
-            object-position: 50% 18%;
-            transform: scale(1.35);
+        /* Pure Transparent Hero Logo Styling — Zero Background Box */
+        .hero-logo-transparent {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            outline: none !important;
+            filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.45));
         }
 
         /* Smooth Donut Chart Segment Transitions */
@@ -147,19 +140,19 @@
             <!-- Brand Emblem + Name -->
             <a href="#" class="flex items-center gap-3.5 group focus:outline-none">
                 <div class="w-11 h-11 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center bg-navy-950 border border-gold-400/25 transition-transform duration-300 group-hover:scale-105">
-                    <!-- Actual Logo3.png cropped to top circular emblem, with automatic fallback -->
-                    <img id="navLogoImg" src="Logo3.png" alt="Amorn Capital Holdings Emblem" class="w-full h-full navbar-logo-crop" onerror="handleLogoFallback(this, 'nav')" />
+                    <!-- Actual Logo3_2.jpg cropped to top circular emblem, with automatic fallback -->
+                    <img id="navLogoImg" src="Logo3_2.jpg" alt="Amorn Capital Holdings Emblem" class="w-full h-full navbar-logo-crop" onerror="handleLogoFallback(this, 'nav')" />
                     <svg id="navLogoFallback" viewBox="0 0 200 200" class="w-full h-full hidden">
                         <path d="M100,14 C148,14 186,52 186,100 C186,138 161,170 126,181 C154,166 172,136 172,102 C172,58 137,24 94,24 C63,24 36,42 23,69 C32,37 63,14 100,14 Z" fill="url(#goldMetallic)"/>
                         <path d="M100,186 C52,186 14,148 14,100 C14,62 39,30 74,19 C46,34 28,64 28,98 C28,142 63,176 106,176 C137,176 164,158 177,131 C168,163 137,186 100,186 Z" fill="url(#goldHighlight)"/>
-                        <circle cx="100" cy="100" r="68" fill="none" stroke="url(#goldMetallic)" stroke-width="3.5" stroke-dasharray="320 60" transform="rotate(-35 100 100)"/>
-                        <path d="M100,40 L142,146 L152,146 L152,154 L116,154 L116,146 L125,146 L115,120 L82,120 L72,146 L82,146 L82,154 L48,154 L48,146 L57,146 L96,40 Z M98.5,67 L86,108 L111,108 Z" fill="url(#goldMetallic)"/>
-                    </svg>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-display text-lg sm:text-xl font-bold tracking-[0.18em] gold-gradient-text leading-none">AMORN</span>
-                    <span class="font-display text-[9.5px] sm:text-[10.5px] tracking-[0.28em] text-gold-300/90 mt-1">CAPITAL HOLDINGS</span>
-                </div>
+    <!-- Top Sticky Institutional Navigation (No Top-Left Logo Graphic) -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-navy-950/90 backdrop-blur-md border-b border-gold-400/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Clean Typographic Brand Name Only (No Emblem/Logo in Top-Left) -->
+            <a href="#" class="flex flex-col focus:outline-none group">
+                <span class="font-display text-lg sm:text-xl font-bold tracking-[0.22em] gold-gradient-text leading-none">AMORN</span>
+                <span class="font-display text-[9.5px] sm:text-[10.5px] tracking-[0.28em] text-gold-300/90 mt-1 group-hover:text-gold-200 transition-colors">CAPITAL HOLDINGS</span>
             </a>
 
             <!-- Desktop Navigation Links -->
@@ -203,28 +196,28 @@
     <section class="relative pt-28 pb-20 md:pt-36 md:pb-28 hero-radial-bg subtle-grid border-b border-gold-400/15">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             
-            <!-- Centerpiece 3D Gold Logo Image (Logo3.png) with Automatic Black-Background Transparency -->
-            <div class="mx-auto mb-6 relative flex flex-col items-center justify-center">
-                <!-- Ambient Gold Backlight Glow -->
+            <!-- Centerpiece 3D Gold Logo Image (Logo3.png) with 100% Transparent Background -->
+            <div class="mx-auto mb-6 relative flex flex-col items-center justify-center bg-transparent">
+                <!-- Subtle Ambient Gold Backlight Glow -->
                 <div class="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gold-400/10 blur-3xl pointer-events-none"></div>
 
                 <!-- Primary Image Tag loading Logo3.png directly from the same GitHub repository -->
-                <div id="heroLogoImageContainer" class="relative z-10 w-full max-w-[440px] sm:max-w-[520px] mx-auto transition-transform duration-500 hover:scale-[1.015]">
+                <div id="heroLogoImageContainer" class="relative z-10 w-full max-w-[420px] sm:max-w-[500px] mx-auto bg-transparent border-0 shadow-none">
                     <img 
                         id="heroLogoImg"
                         src="Logo3.png" 
                         alt="Amorn Capital Holdings Official 3D Gold Logo" 
-                        class="w-full h-auto mx-auto logo-blend-screen select-none"
-                        onload="onHeroLogoLoaded()"
-                        onerror="handleLogoFallback(this, 'hero')"
+                        class="w-full h-auto mx-auto hero-logo-transparent select-none"
+                        onload="onHeroLogoLoaded(this)"
+                        onerror="handleLogoFallback(this)"
                     />
                 </div>
 
                 <!-- High-Precision 3D Chiseled Gold Fallback (Only shown if Logo3.png is not yet placed in the same folder) -->
-                <div id="heroLogoFallbackContainer" class="hidden relative z-10 flex-col items-center">
+                <div id="heroLogoFallbackContainer" class="hidden relative z-10 flex-col items-center bg-transparent">
                     <div class="w-44 h-44 sm:w-52 sm:h-52 mx-auto mb-4">
                         <svg viewBox="0 0 260 260" class="w-full h-full" filter="url(#emblemShadow)" role="img" aria-label="Amorn Capital Holdings 3D Gold Emblem">
-                            <!-- Outer Sweeping 3D Gold Swirl Crest matching Logo3.png -->
+                            <!-- Outer Sweeping 3D Gold Swirl Crest -->
                             <path d="M130,18 C192,18 242,68 242,130 C242,180 209,222 164,236 C200,217 224,178 224,132 C224,75 178,30 122,30 C81,30 46,54 29,89 C41,48 81,18 130,18 Z" fill="url(#goldMetallic)"/>
                             <path d="M130,242 C68,242 18,192 18,130 C18,80 51,38 96,24 C60,43 36,82 36,128 C36,185 82,230 138,230 C179,230 214,206 231,171 C219,212 179,242 130,242 Z" fill="url(#goldHighlight)"/>
                             <path d="M210,78 C226,106 226,141 209,171 C193,199 162,216 130,217 C158,212 183,195 196,168 C211,139 210,104 195,77 C177,48 145,33 112,36 C152,26 190,44 210,78 Z" fill="url(#goldHighlight)" opacity="0.92"/>
@@ -840,12 +833,70 @@
         // Set current year dynamically
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // Automatic Fallback Chain for Logo3.png -> logo.png -> Logo3.png -> 3D SVG Replica
-        const fallbackCandidates = ['logo.png', 'Logo3.png', 'Logo3.png'];
+        // Automatic Fallback Chain starting with Logo3.png
+        const fallbackCandidates = ['logo3.png', 'Logo3_2.png', 'Logo3_2.jpg', 'Logo3.jpg', 'logo.png'];
         let heroFallbackIndex = 0;
-        let navFallbackIndex = 0;
 
-        function onHeroLogoLoaded() {
+        // Pixel-level Canvas Transparency Processor:
+        // Preserves existing PNG transparency AND automatically removes any dark/black background pixels
+        // so the 3D gold emblem & typography float seamlessly over the navy website background.
+        function ensureTransparentLogo(imgEl) {
+            if (!imgEl || imgEl.dataset.transparentProcessed === 'true') return;
+            try {
+                const w = imgEl.naturalWidth || imgEl.width;
+                const h = imgEl.naturalHeight || imgEl.height;
+                if (!w || !h) return;
+
+                const canvas = document.createElement('canvas');
+                canvas.width = w;
+                canvas.height = h;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(imgEl, 0, 0, w, h);
+
+                const imgData = ctx.getImageData(0, 0, w, h);
+                const data = imgData.data;
+
+                for (let i = 0; i < data.length; i += 4) {
+                    const r = data[i];
+                    const g = data[i + 1];
+                    const b = data[i + 2];
+                    const a = data[i + 3];
+
+                    // Keep already-transparent pixels untouched
+                    if (a === 0) continue;
+
+                    const maxChannel = Math.max(r, g, b);
+                    const minChannel = Math.min(r, g, b);
+                    const goldWarmth = ((r + g) * 0.5) - b; // Gold pixels have warm R/G > B
+
+                    // Pure black / very dark background pixels -> 100% transparent
+                    if (maxChannel < 22 && goldWarmth < 12) {
+                        data[i + 3] = 0;
+                    } 
+                    // Smooth anti-aliased transition on dark edges (prevents dark halo or jagged border)
+                    else if (maxChannel < 65 && goldWarmth < 25) {
+                        const openness = Math.max(0, Math.min(1, (maxChannel - 22) / 43));
+                        const warmthBoost = Math.max(0, Math.min(1, goldWarmth / 25));
+                        const factor = Math.max(openness, warmthBoost);
+                        data[i + 3] = Math.round(a * factor * factor);
+                    }
+                    // Also remove neutral gray/white checkerboard if accidentally present in a source file
+                    else if ((maxChannel - minChannel) < 8 && maxChannel > 190 && goldWarmth < 6) {
+                        data[i + 3] = 0;
+                    }
+                }
+
+                ctx.putImageData(imgData, 0, 0);
+                imgEl.dataset.transparentProcessed = 'true';
+                imgEl.src = canvas.toDataURL('image/png');
+            } catch (err) {
+                // If cross-origin restrictions prevent canvas inspection, display original PNG directly
+                imgEl.dataset.transparentProcessed = 'true';
+            }
+        }
+
+        function onHeroLogoLoaded(imgEl) {
+            ensureTransparentLogo(imgEl);
             const heroContainer = document.getElementById('heroLogoImageContainer');
             const fallbackContainer = document.getElementById('heroLogoFallbackContainer');
             if (heroContainer) heroContainer.classList.remove('hidden');
@@ -855,24 +906,16 @@
             }
         }
 
-        function handleLogoFallback(imgEl, location) {
-            if (location === 'hero') {
-                if (heroFallbackIndex < fallbackCandidates.length) {
-                    imgEl.src = fallbackCandidates[heroFallbackIndex++];
-                } else {
-                    // Show high-precision 3D SVG fallback + local preview button if Logo3.png hasn't been uploaded yet
-                    document.getElementById('heroLogoImageContainer').classList.add('hidden');
-                    const fallbackContainer = document.getElementById('heroLogoFallbackContainer');
-                    fallbackContainer.classList.remove('hidden');
-                    fallbackContainer.classList.add('flex');
-                }
-            } else if (location === 'nav') {
-                if (navFallbackIndex < fallbackCandidates.length) {
-                    imgEl.src = fallbackCandidates[navFallbackIndex++];
-                } else {
-                    imgEl.classList.add('hidden');
-                    document.getElementById('navLogoFallback').classList.remove('hidden');
-                }
+        function handleLogoFallback(imgEl) {
+            if (heroFallbackIndex < fallbackCandidates.length) {
+                imgEl.removeAttribute('data-transparent-processed');
+                imgEl.src = fallbackCandidates[heroFallbackIndex++];
+            } else {
+                // Show 3D SVG fallback + local preview button if Logo3.png hasn't been found yet
+                document.getElementById('heroLogoImageContainer').classList.add('hidden');
+                const fallbackContainer = document.getElementById('heroLogoFallbackContainer');
+                fallbackContainer.classList.remove('hidden');
+                fallbackContainer.classList.add('flex');
             }
         }
 
@@ -882,21 +925,9 @@
             if (!file) return;
             const reader = new FileReader();
             reader.onload = function(e) {
-                const dataUrl = e.target.result;
                 const heroImg = document.getElementById('heroLogoImg');
-                const navImg = document.getElementById('navLogoImg');
-                const navFallback = document.getElementById('navLogoFallback');
-
-                heroImg.src = dataUrl;
-                onHeroLogoLoaded();
-
-                if (navImg) {
-                    navImg.src = dataUrl;
-                    navImg.classList.remove('hidden');
-                }
-                if (navFallback) {
-                    navFallback.classList.add('hidden');
-                }
+                heroImg.removeAttribute('data-transparent-processed');
+                heroImg.src = e.target.result;
             };
             reader.readAsDataURL(file);
         }
