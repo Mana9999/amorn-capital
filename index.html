@@ -86,6 +86,22 @@
             background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.5) 50%, transparent 100%);
         }
 
+        /* Automatic Black-Background Removal for Logo3_2.jpg via Screen Blend & Soft Radial Mask */
+        .logo-blend-screen {
+            mix-blend-mode: screen;
+            -webkit-mask-image: radial-gradient(ellipse 88% 86% at 50% 50%, #000 74%, transparent 100%);
+            mask-image: radial-gradient(ellipse 88% 86% at 50% 50%, #000 74%, transparent 100%);
+            filter: contrast(1.06) brightness(1.04);
+        }
+
+        /* Cropped Emblem-Only View for Top Navbar Icon using Logo3_2.jpg */
+        .navbar-logo-crop {
+            mix-blend-mode: screen;
+            object-fit: cover;
+            object-position: 50% 18%;
+            transform: scale(1.35);
+        }
+
         /* Smooth Donut Chart Segment Transitions */
         .donut-segment {
             transition: stroke-dasharray 0.6s cubic-bezier(0.4, 0, 0.2, 1), stroke-width 0.25s ease, opacity 0.25s ease;
@@ -102,19 +118,24 @@
     <svg width="0" height="0" class="hidden" aria-hidden="true">
         <defs>
             <linearGradient id="goldMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#F7E9B7" />
-                <stop offset="30%" stop-color="#DFB846" />
-                <stop offset="55%" stop-color="#B68B23" />
-                <stop offset="80%" stop-color="#E5C158" />
-                <stop offset="100%" stop-color="#9A7215" />
+                <stop offset="0%" stop-color="#FFF3C4" />
+                <stop offset="25%" stop-color="#E5C158" />
+                <stop offset="50%" stop-color="#B38728" />
+                <stop offset="75%" stop-color="#F7E5A9" />
+                <stop offset="100%" stop-color="#8A6414" />
             </linearGradient>
             <linearGradient id="goldHighlight" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#9E7B1C" />
-                <stop offset="50%" stop-color="#E5C158" />
-                <stop offset="100%" stop-color="#FFF2C2" />
+                <stop offset="0%" stop-color="#7D5A10" />
+                <stop offset="45%" stop-color="#D4AF37" />
+                <stop offset="100%" stop-color="#FFF6D6" />
+            </linearGradient>
+            <linearGradient id="goldBevelDark" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#9A7215" />
+                <stop offset="50%" stop-color="#5E4308" />
+                <stop offset="100%" stop-color="#B68B23" />
             </linearGradient>
             <filter id="emblemShadow" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.65"/>
+                <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#000000" flood-opacity="0.75"/>
             </filter>
         </defs>
     </svg>
@@ -125,14 +146,13 @@
             
             <!-- Brand Emblem + Name -->
             <a href="#" class="flex items-center gap-3.5 group focus:outline-none">
-                <div class="w-11 h-11 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
-                    <!-- Mini Custom SVG Logo matching the Amorn Enso Crest -->
-                    <svg viewBox="0 0 200 200" class="w-full h-full">
-                        <!-- Outer Enso Swirl Arcs -->
+                <div class="w-11 h-11 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center bg-navy-950 border border-gold-400/25 transition-transform duration-300 group-hover:scale-105">
+                    <!-- Actual Logo3_2.jpg cropped to top circular emblem, with automatic fallback -->
+                    <img id="navLogoImg" src="Logo3_2.jpg" alt="Amorn Capital Holdings Emblem" class="w-full h-full navbar-logo-crop" onerror="handleLogoFallback(this, 'nav')" />
+                    <svg id="navLogoFallback" viewBox="0 0 200 200" class="w-full h-full hidden">
                         <path d="M100,14 C148,14 186,52 186,100 C186,138 161,170 126,181 C154,166 172,136 172,102 C172,58 137,24 94,24 C63,24 36,42 23,69 C32,37 63,14 100,14 Z" fill="url(#goldMetallic)"/>
                         <path d="M100,186 C52,186 14,148 14,100 C14,62 39,30 74,19 C46,34 28,64 28,98 C28,142 63,176 106,176 C137,176 164,158 177,131 C168,163 137,186 100,186 Z" fill="url(#goldHighlight)"/>
                         <circle cx="100" cy="100" r="68" fill="none" stroke="url(#goldMetallic)" stroke-width="3.5" stroke-dasharray="320 60" transform="rotate(-35 100 100)"/>
-                        <!-- Sculpted Serif Letter A -->
                         <path d="M100,40 L142,146 L152,146 L152,154 L116,154 L116,146 L125,146 L115,120 L82,120 L72,146 L82,146 L82,154 L48,154 L48,146 L57,146 L96,40 Z M98.5,67 L86,108 L111,108 Z" fill="url(#goldMetallic)"/>
                     </svg>
                 </div>
@@ -146,9 +166,9 @@
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
                 <a href="#philosophy" class="hover:text-gold-300 transition-colors">Philosophy</a>
                 <a href="#pillars" class="hover:text-gold-300 transition-colors">Investment Pillars</a>
-                <a href="#architecture" class="hover:text-gold-300 transition-colors">Allocation Model</a>
+                <a href="#architecture" class="hover:text-gold-300 transition-colors">Allocation & Risk</a>
                 <a href="#leadership" class="hover:text-gold-300 transition-colors">Leadership</a>
-                <a href="#regulatory" class="hover:text-gold-300 transition-colors">Legal Notice</a>
+                <a href="#regulatory" class="hover:text-gold-300 transition-colors">Governance</a>
             </nav>
 
             <!-- Right Institutional Status Badge -->
@@ -180,36 +200,60 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 hero-radial-bg subtle-grid border-b border-gold-400/15">
+    <section class="relative pt-28 pb-20 md:pt-36 md:pb-28 hero-radial-bg subtle-grid border-b border-gold-400/15">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             
-            <!-- Centerpiece High-Precision Custom SVG Emblem (Matching the Amorn Capital Holdings Logo) -->
-            <div class="mx-auto mb-8 w-40 h-40 sm:w-48 sm:h-48 relative flex items-center justify-center">
-                <div class="absolute inset-0 rounded-full bg-gold-400/10 blur-2xl"></div>
-                <svg viewBox="0 0 240 240" class="w-full h-full relative z-10" filter="url(#emblemShadow)" role="img" aria-label="Amorn Capital Holdings Emblem">
-                    <!-- Outer Enso Dynamic Double-Swirl Crest -->
-                    <path d="M120,16 C178,16 224,62 224,120 C224,166 194,205 152,218 C185,200 207,164 207,122 C207,69 165,28 113,28 C75,28 43,50 27,82 C38,44 75,16 120,16 Z" fill="url(#goldMetallic)"/>
-                    <path d="M120,224 C62,224 16,178 16,120 C16,74 46,35 88,22 C55,40 33,76 33,118 C33,171 75,212 127,212 C165,212 197,190 213,158 C202,196 165,224 120,224 Z" fill="url(#goldHighlight)"/>
-                    <!-- Inner Interlocking Crescent Ribbons -->
-                    <path d="M195,72 C209,98 209,130 193,158 C178,184 150,200 120,201 C146,196 169,180 181,155 C195,128 194,96 180,71 C164,44 134,30 103,33 C140,24 176,41 195,72 Z" fill="url(#goldHighlight)" opacity="0.9"/>
-                    <path d="M45,168 C31,142 31,110 47,82 C62,56 90,40 120,39 C94,44 71,60 59,85 C45,112 46,144 60,169 C76,196 106,210 137,207 C100,216 64,199 45,168 Z" fill="url(#goldMetallic)" opacity="0.9"/>
-                    
-                    <!-- Bold Sculpted Chiseled Serif "A" -->
-                    <!-- Main A Silhouette -->
-                    <path d="M120,46 L168,172 L180,172 L180,181 L137,181 L137,172 L148,172 L136,141 L99,141 L87,172 L99,172 L99,181 L60,181 L60,172 L71,172 L116,46 Z M117.5,79 L103,126 L132,126 Z" fill="url(#goldMetallic)"/>
-                    <!-- Subtle 3D Bevel Highlight on Left & Crossbar -->
-                    <path d="M116,46 L120,46 L117.5,79 L87,172 L71,172 Z" fill="url(#goldHighlight)" opacity="0.65"/>
-                </svg>
-            </div>
+            <!-- Centerpiece 3D Gold Logo Image (Logo3_2.jpg) with Automatic Black-Background Transparency -->
+            <div class="mx-auto mb-6 relative flex flex-col items-center justify-center">
+                <!-- Ambient Gold Backlight Glow -->
+                <div class="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gold-400/10 blur-3xl pointer-events-none"></div>
 
-            <!-- Full Logo Typography Lockup (Without LLC) -->
-            <div class="mb-8">
-                <h1 class="font-display text-4xl sm:text-6xl font-bold tracking-[0.22em] gold-gradient-text drop-shadow">
-                    AMORN
-                </h1>
-                <p class="font-display text-sm sm:text-xl tracking-[0.34em] text-gold-300 mt-2 font-semibold">
-                    CAPITAL HOLDINGS
-                </p>
+                <!-- Primary Image Tag loading Logo3_2.jpg directly from the same GitHub repository -->
+                <div id="heroLogoImageContainer" class="relative z-10 w-full max-w-[440px] sm:max-w-[520px] mx-auto transition-transform duration-500 hover:scale-[1.015]">
+                    <img 
+                        id="heroLogoImg"
+                        src="Logo3_2.jpg" 
+                        alt="Amorn Capital Holdings Official 3D Gold Logo" 
+                        class="w-full h-auto mx-auto logo-blend-screen select-none"
+                        onload="onHeroLogoLoaded()"
+                        onerror="handleLogoFallback(this, 'hero')"
+                    />
+                </div>
+
+                <!-- High-Precision 3D Chiseled Gold Fallback (Only shown if Logo3_2.jpg is not yet placed in the same folder) -->
+                <div id="heroLogoFallbackContainer" class="hidden relative z-10 flex-col items-center">
+                    <div class="w-44 h-44 sm:w-52 sm:h-52 mx-auto mb-4">
+                        <svg viewBox="0 0 260 260" class="w-full h-full" filter="url(#emblemShadow)" role="img" aria-label="Amorn Capital Holdings 3D Gold Emblem">
+                            <!-- Outer Sweeping 3D Gold Swirl Crest matching Logo3_2.jpg -->
+                            <path d="M130,18 C192,18 242,68 242,130 C242,180 209,222 164,236 C200,217 224,178 224,132 C224,75 178,30 122,30 C81,30 46,54 29,89 C41,48 81,18 130,18 Z" fill="url(#goldMetallic)"/>
+                            <path d="M130,242 C68,242 18,192 18,130 C18,80 51,38 96,24 C60,43 36,82 36,128 C36,185 82,230 138,230 C179,230 214,206 231,171 C219,212 179,242 130,242 Z" fill="url(#goldHighlight)"/>
+                            <path d="M210,78 C226,106 226,141 209,171 C193,199 162,216 130,217 C158,212 183,195 196,168 C211,139 210,104 195,77 C177,48 145,33 112,36 C152,26 190,44 210,78 Z" fill="url(#goldHighlight)" opacity="0.92"/>
+                            <path d="M50,182 C34,154 34,119 51,89 C67,61 98,44 130,43 C102,48 77,65 64,92 C49,121 50,156 65,183 C83,212 115,227 148,224 C108,234 70,216 50,182 Z" fill="url(#goldBevelDark)" opacity="0.92"/>
+                            <!-- 3D Faceted Serif Letter "A" -->
+                            <path d="M130,48 L182,185 L195,185 L195,195 L148,195 L148,185 L160,185 L147,151 L107,151 L94,185 L107,185 L107,195 L65,195 L65,185 L77,185 L126,48 Z M127.5,84 L111,135 L143,135 Z" fill="url(#goldMetallic)"/>
+                            <path d="M126,48 L130,48 L127.5,84 L94,185 L77,185 Z" fill="url(#goldHighlight)" opacity="0.8"/>
+                            <path d="M130,48 L182,185 L166,185 L127.5,84 Z" fill="url(#goldBevelDark)" opacity="0.55"/>
+                        </svg>
+                    </div>
+                    <div class="mb-3">
+                        <h1 class="font-display text-4xl sm:text-6xl font-bold tracking-[0.22em] gold-gradient-text drop-shadow">
+                            AMORN
+                        </h1>
+                        <p class="font-display text-sm sm:text-xl tracking-[0.34em] text-gold-300 mt-2 font-semibold">
+                            CAPITAL HOLDINGS
+                        </p>
+                    </div>
+                    <!-- Local Sandbox Preview Loader Button (Hidden automatically on live site once Logo3_2.jpg is present) -->
+                    <div id="localPreviewControl" class="mt-2 mb-3">
+                        <label class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800/90 hover:bg-navy-700 text-[11px] text-gold-300 border border-gold-400/35 cursor-pointer transition-all shadow">
+                            <svg class="w-3.5 h-3.5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>Preview with your local <strong>Logo3_2.jpg</strong> file</span>
+                            <input type="file" accept="image/*" class="hidden" onchange="previewLocalLogoFile(event)" />
+                        </label>
+                    </div>
+                </div>
             </div>
 
             <!-- Eyebrow Location & Status Pill -->
@@ -221,7 +265,7 @@
 
             <!-- Core Value Proposition Headline -->
             <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight leading-tight max-w-4xl mx-auto mb-6">
-                Disciplined Capital Allocation.<br class="hidden sm:inline" />
+                Disciplined Quantitative &amp; Value Investment Management.<br class="hidden sm:inline" />
                 <span class="font-normal italic text-gold-200">Generational Compounding.</span>
             </h2>
 
@@ -700,6 +744,10 @@
                                 <span class="text-slate-400">Research:</span>
                                 <span class="font-medium text-white">15+ Years</span>
                             </div>
+                            <div class="flex justify-between pt-1 border-t border-white/5">
+                                <span class="text-slate-400">Contact:</span>
+                                <a href="mailto:mana@amorncapital.com" class="font-medium text-gold-300 hover:underline">mana@amorncapital.com</a>
+                            </div>
                         </div>
                     </div>
 
@@ -756,20 +804,22 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
                     </svg>
                     <h4 class="font-display text-xs sm:text-sm font-bold tracking-[0.2em] text-gold-300 uppercase">
-                        Mandatory Regulatory Notice & Private Office Mandate
+                        Mandatory Regulatory Notice &amp; Private Office Mandate
                     </h4>
                 </div>
                 <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
-                    <strong>IMPORTANT DISCLOSURE:</strong> Amorn Capital Holdings operates exclusively as a private single-family office managing proprietary assets for its founding family. Amorn Capital Holdings is <strong>NOT</strong> a registered investment advisor (RIA), broker-dealer, commodity pool operator, or public investment fund under the U.S. Investment Advisers Act of 1940 or Florida Statutes. We do not solicit, accept, or manage capital from third-party investors or the general public. All content presented on this website is for institutional identification and informational purposes only and does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation for any security or investment advisory service.
+                    <strong>IMPORTANT DISCLOSURE:</strong> Amorn Capital Holdings operates exclusively as a private single-family office managing proprietary family assets. We do not solicit, accept, or manage capital from external investors, nor do we offer investment advisory services to the public. Amorn Capital Holdings is <strong>NOT</strong> a registered investment advisor (RIA), broker-dealer, commodity pool operator, or public investment fund under the U.S. Investment Advisers Act of 1940 or Florida Statutes. All content presented on this website is for institutional identification and informational purposes only.
                 </p>
             </div>
 
             <!-- Bottom Brand & Contact Metadata -->
             <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-400 pt-4 border-t border-white/10">
-                <div class="flex items-center gap-3">
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
                     <span class="font-display font-bold tracking-[0.2em] text-gold-300">AMORN CAPITAL HOLDINGS</span>
                     <span>•</span>
-                    <span>Miami-Dade County, Florida, United States</span>
+                    <span>Miami-Dade County, Florida, USA</span>
+                    <span>•</span>
+                    <a href="mailto:mana@amorncapital.com" class="text-gold-300 hover:text-gold-200 transition-colors">mana@amorncapital.com</a>
                 </div>
 
                 <div class="flex flex-wrap items-center justify-center gap-4">
@@ -789,6 +839,67 @@
     <script>
         // Set current year dynamically
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Automatic Fallback Chain for Logo3_2.jpg -> logo.png -> Logo3.png -> 3D SVG Replica
+        const fallbackCandidates = ['logo.png', 'Logo3.png', 'Logo3_2.png'];
+        let heroFallbackIndex = 0;
+        let navFallbackIndex = 0;
+
+        function onHeroLogoLoaded() {
+            const heroContainer = document.getElementById('heroLogoImageContainer');
+            const fallbackContainer = document.getElementById('heroLogoFallbackContainer');
+            if (heroContainer) heroContainer.classList.remove('hidden');
+            if (fallbackContainer) {
+                fallbackContainer.classList.add('hidden');
+                fallbackContainer.classList.remove('flex');
+            }
+        }
+
+        function handleLogoFallback(imgEl, location) {
+            if (location === 'hero') {
+                if (heroFallbackIndex < fallbackCandidates.length) {
+                    imgEl.src = fallbackCandidates[heroFallbackIndex++];
+                } else {
+                    // Show high-precision 3D SVG fallback + local preview button if Logo3_2.jpg hasn't been uploaded yet
+                    document.getElementById('heroLogoImageContainer').classList.add('hidden');
+                    const fallbackContainer = document.getElementById('heroLogoFallbackContainer');
+                    fallbackContainer.classList.remove('hidden');
+                    fallbackContainer.classList.add('flex');
+                }
+            } else if (location === 'nav') {
+                if (navFallbackIndex < fallbackCandidates.length) {
+                    imgEl.src = fallbackCandidates[navFallbackIndex++];
+                } else {
+                    imgEl.classList.add('hidden');
+                    document.getElementById('navLogoFallback').classList.remove('hidden');
+                }
+            }
+        }
+
+        // Allow instant preview of local Logo3_2.jpg inside the browser preview window
+        function previewLocalLogoFile(event) {
+            const file = event.target.files && event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const dataUrl = e.target.result;
+                const heroImg = document.getElementById('heroLogoImg');
+                const navImg = document.getElementById('navLogoImg');
+                const navFallback = document.getElementById('navLogoFallback');
+
+                heroImg.src = dataUrl;
+                onHeroLogoLoaded();
+
+                if (navImg) {
+                    navImg.src = dataUrl;
+                    navImg.classList.remove('hidden');
+                }
+                if (navFallback) {
+                    navFallback.classList.add('hidden');
+                }
+            };
+            reader.readAsDataURL(file);
+        }
 
         // Mobile Navigation Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
